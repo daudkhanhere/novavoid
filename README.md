@@ -1,6 +1,9 @@
-# NØVA/VOID
+# Ginger
 
-A high-energy, one-page digital playground built with plain HTML, CSS, and JavaScript.
+A warm, gingerbread-inspired social web app built with plain HTML, CSS, and JavaScript.
+
+It includes an Instagram-style feed, stories, explore and profile views, direct messages,
+activity notifications, interactive likes, comments, saves, and a working post composer.
 
 ## Run locally
 

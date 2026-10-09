@@ -5,179 +5,371 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="NØVA/VOID is an experimental digital playground for loud ideas, strange interfaces, and beautiful chaos."
+      content="Ginger is a warm, playful social feed for delicious moments, tiny wins, and everyday sweetness."
     />
-    <meta name="theme-color" content="#0a0a0a" />
-    <meta property="og:title" content="NØVA/VOID — Beautiful chaos, engineered." />
-    <meta
-      property="og:description"
-      content="An experimental digital playground for loud ideas and strange interfaces."
-    />
-    <meta property="og:type" content="website" />
-    <title>NØVA/VOID — Beautiful chaos, engineered.</title>
+    <meta name="theme-color" content="#f4eadc" />
+    <title>Ginger — Share life warm</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700;9..144,800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
     <script src="./script.js" defer></script>
   </head>
   <body>
-    <div class="noise" aria-hidden="true"></div>
-    <div class="cursor" aria-hidden="true"></div>
+    <div class="crumb-trail" aria-hidden="true">✦ · · ✦ · · ✦ · · ✦ · · ✦ · · ✦ · · ✦</div>
 
-    <header class="site-header">
-      <a class="brand magnetic" href="#top" aria-label="NØVA/VOID home">
-        <span>NØVA</span><span>/</span><span>VOID</span>
-      </a>
-      <div class="status">
-        <span class="status-dot" aria-hidden="true"></span>
-        <span>Signal live</span>
-        <span class="status-time" aria-hidden="true">00:00:00</span>
-      </div>
-      <button class="menu-button magnetic" type="button" aria-expanded="false" aria-controls="site-nav">
-        <span class="menu-label">Menu</span>
-        <span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
-      </button>
-    </header>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Main navigation">
+        <a class="wordmark" href="#" aria-label="Ginger home">
+          <span class="wordmark-mark">g</span>
+          <span>ginger</span>
+        </a>
 
-    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-      <a href="#experiments" data-index="01">Experiments <span>↗</span></a>
-      <a href="#manifesto" data-index="02">Manifesto <span>↗</span></a>
-      <a href="#contact" data-index="03">Start something <span>↗</span></a>
-      <p>Independent digital studio<br />Somewhere on planet Earth</p>
+        <nav class="desktop-nav">
+          <button class="nav-item is-active" type="button" data-view="home">
+            <i data-lucide="house"></i><span>Home</span>
+          </button>
+          <button class="nav-item" type="button" data-view="explore">
+            <i data-lucide="compass"></i><span>Explore</span>
+          </button>
+          <button class="nav-item" type="button" data-view="reels">
+            <i data-lucide="clapperboard"></i><span>Bakes</span>
+          </button>
+          <button class="nav-item" type="button" data-view="messages">
+            <i data-lucide="message-circle"></i><span>Messages</span>
+            <b class="nav-badge">2</b>
+          </button>
+          <button class="nav-item" type="button" data-view="notifications">
+            <i data-lucide="heart"></i><span>Activity</span>
+            <b class="nav-dot"></b>
+          </button>
+          <button class="nav-item" type="button" data-view="profile">
+            <span class="mini-avatar avatar-you">A</span><span>Profile</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-actions">
+          <button class="pill-button js-search" type="button">
+            <i data-lucide="search"></i><span>Search ginger</span><kbd>⌘ K</kbd>
+          </button>
+          <button class="primary-button js-create" type="button">
+            <i data-lucide="plus"></i><span>Share a moment</span>
+          </button>
+        </div>
+
+        <div class="sidebar-profile">
+          <span class="avatar avatar-you">A</span>
+          <span><strong>alexa.oven</strong><small>@alexa</small></span>
+          <button type="button" aria-label="Profile options"><i data-lucide="ellipsis"></i></button>
+        </div>
+      </aside>
+
+      <main class="main-column">
+        <header class="mobile-header">
+          <a class="wordmark" href="#"><span class="wordmark-mark">g</span><span>ginger</span></a>
+          <div>
+            <button type="button" aria-label="Notifications" class="icon-button js-activity">
+              <i data-lucide="heart"></i><b class="nav-dot"></b>
+            </button>
+            <button type="button" aria-label="Create post" class="icon-button js-create">
+              <i data-lucide="square-plus"></i>
+            </button>
+          </div>
+        </header>
+
+        <section class="view-panel is-active" data-view-panel="home" aria-labelledby="home-title">
+          <div class="view-heading feed-heading">
+            <div>
+              <p class="eyebrow">Friday, October 9</p>
+              <h1 id="home-title">Fresh from the oven</h1>
+            </div>
+            <button class="text-button" type="button" data-action="sort">
+              Latest first <i data-lucide="chevron-down"></i>
+            </button>
+          </div>
+
+          <div class="stories" aria-label="Stories">
+            <button class="story story-add" type="button" data-create-story>
+              <span class="story-ring"><span class="story-avatar avatar-you">A</span><b><i data-lucide="plus"></i></b></span>
+              <span>Your bake</span>
+            </button>
+            <button class="story" type="button" data-story-name="milo.makes" data-story-image="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1200&q=85">
+              <span class="story-ring"><span class="story-avatar avatar-milo">M</span></span><span>milo.makes</span>
+            </button>
+            <button class="story" type="button" data-story-name="cocoa.club" data-story-image="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=1200&q=85">
+              <span class="story-ring"><span class="story-avatar avatar-cocoa">C</span></span><span>cocoa.club</span>
+            </button>
+            <button class="story" type="button" data-story-name="flour.power" data-story-image="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=1200&q=85">
+              <span class="story-ring"><span class="story-avatar avatar-flour">F</span></span><span>flour.power</span>
+            </button>
+            <button class="story" type="button" data-story-name="jamie.bakes" data-story-image="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=85">
+              <span class="story-ring"><span class="story-avatar avatar-jamie">J</span></span><span>jamie.bakes</span>
+            </button>
+            <button class="story" type="button" data-story-name="daily.dough" data-story-image="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=1200&q=85">
+              <span class="story-ring"><span class="story-avatar avatar-dough">D</span></span><span>daily.dough</span>
+            </button>
+            <button class="story" type="button" data-story-name="sugar.rush" data-story-image="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1200&q=85">
+              <span class="story-ring"><span class="story-avatar avatar-sugar">S</span></span><span>sugar.rush</span>
+            </button>
+          </div>
+
+          <div class="post-list">
+            <article class="post-card" data-post-id="1" data-like-count="1248">
+              <header class="post-header">
+                <span class="story-ring small"><span class="story-avatar avatar-milo">M</span></span>
+                <span class="post-author"><strong>milo.makes</strong><small>Grandma's kitchen · 18 min</small></span>
+                <button class="icon-button" type="button" aria-label="Post options"><i data-lucide="ellipsis"></i></button>
+              </header>
+              <div class="post-media">
+                <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=1200&q=85" alt="Freshly baked chocolate cookies on a cooling rack" />
+                <span class="double-heart" aria-hidden="true"><i data-lucide="heart"></i></span>
+              </div>
+              <div class="post-body">
+                <div class="post-actions">
+                  <div>
+                    <button class="action-button like-button" type="button" aria-label="Like post"><i data-lucide="heart"></i></button>
+                    <button class="action-button js-focus-comment" type="button" aria-label="Comment"><i data-lucide="message-circle"></i></button>
+                    <button class="action-button js-share" type="button" aria-label="Share post"><i data-lucide="send"></i></button>
+                  </div>
+                  <button class="action-button save-button" type="button" aria-label="Save post"><i data-lucide="bookmark"></i></button>
+                </div>
+                <p class="likes"><strong class="likes-count">1,248</strong> warm hearts</p>
+                <p class="caption"><strong>milo.makes</strong> The secret ingredient was definitely the extra pinch of cinnamon. Batch two is already gone 🍪</p>
+                <button class="comments-link" type="button">View all 38 comments</button>
+                <ul class="comment-list">
+                  <li><strong>cocoa.club</strong> Saving this ratio forever.</li>
+                  <li><strong>flour.power</strong> The crinkle tops! Perfection.</li>
+                </ul>
+                <time datetime="2026-10-09T09:42">18 MINUTES AGO</time>
+                <form class="comment-form">
+                  <input type="text" aria-label="Add a comment" placeholder="Add a warm comment…" maxlength="120" />
+                  <button type="submit">Post</button>
+                </form>
+              </div>
+            </article>
+
+            <article class="post-card" data-post-id="2" data-like-count="892">
+              <header class="post-header">
+                <span class="story-ring small"><span class="story-avatar avatar-cocoa">C</span></span>
+                <span class="post-author"><strong>cocoa.club</strong><small>Sunday soft launch · 1 hr</small></span>
+                <button class="icon-button" type="button" aria-label="Post options"><i data-lucide="ellipsis"></i></button>
+              </header>
+              <div class="post-media post-media-portrait">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=1200&q=85" alt="Rich chocolate dessert dusted with cocoa" />
+                <span class="double-heart" aria-hidden="true"><i data-lucide="heart"></i></span>
+              </div>
+              <div class="post-body">
+                <div class="post-actions">
+                  <div>
+                    <button class="action-button like-button" type="button" aria-label="Like post"><i data-lucide="heart"></i></button>
+                    <button class="action-button js-focus-comment" type="button" aria-label="Comment"><i data-lucide="message-circle"></i></button>
+                    <button class="action-button js-share" type="button" aria-label="Share post"><i data-lucide="send"></i></button>
+                  </div>
+                  <button class="action-button save-button" type="button" aria-label="Save post"><i data-lucide="bookmark"></i></button>
+                </div>
+                <p class="likes"><strong class="likes-count">892</strong> warm hearts</p>
+                <p class="caption"><strong>cocoa.club</strong> Chocolate on chocolate, because restraint is overrated. ✨</p>
+                <button class="comments-link" type="button">View all 21 comments</button>
+                <ul class="comment-list">
+                  <li><strong>jamie.bakes</strong> I can hear this screenshot crunching.</li>
+                </ul>
+                <time datetime="2026-10-09T08:22">1 HOUR AGO</time>
+                <form class="comment-form">
+                  <input type="text" aria-label="Add a comment" placeholder="Add a warm comment…" maxlength="120" />
+                  <button type="submit">Post</button>
+                </form>
+              </div>
+            </article>
+
+            <article class="post-card" data-post-id="3" data-like-count="2014">
+              <header class="post-header">
+                <span class="story-ring small"><span class="story-avatar avatar-flour">F</span></span>
+                <span class="post-author"><strong>flour.power</strong><small>Chef's table · 3 hrs</small></span>
+                <button class="icon-button" type="button" aria-label="Post options"><i data-lucide="ellipsis"></i></button>
+              </header>
+              <div class="post-media">
+                <img loading="lazy" src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=1200&q=85" alt="Colorful cupcakes with decorative frosting" />
+                <span class="double-heart" aria-hidden="true"><i data-lucide="heart"></i></span>
+              </div>
+              <div class="post-body">
+                <div class="post-actions">
+                  <div>
+                    <button class="action-button like-button" type="button" aria-label="Like post"><i data-lucide="heart"></i></button>
+                    <button class="action-button js-focus-comment" type="button" aria-label="Comment"><i data-lucide="message-circle"></i></button>
+                    <button class="action-button js-share" type="button" aria-label="Share post"><i data-lucide="send"></i></button>
+                  </div>
+                  <button class="action-button save-button" type="button" aria-label="Save post"><i data-lucide="bookmark"></i></button>
+                </div>
+                <p class="likes"><strong class="likes-count">2,014</strong> warm hearts</p>
+                <p class="caption"><strong>flour.power</strong> Tiny cakes with big Friday energy. Which color would you pick?</p>
+                <button class="comments-link" type="button">View all 64 comments</button>
+                <ul class="comment-list">
+                  <li><strong>sugar.rush</strong> Pistachio green, obviously.</li>
+                </ul>
+                <time datetime="2026-10-09T06:12">3 HOURS AGO</time>
+                <form class="comment-form">
+                  <input type="text" aria-label="Add a comment" placeholder="Add a warm comment…" maxlength="120" />
+                  <button type="submit">Post</button>
+                </form>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="view-panel" data-view-panel="explore" aria-labelledby="explore-title">
+          <div class="view-heading">
+            <div><p class="eyebrow">Fresh discoveries</p><h1 id="explore-title">Explore the tray</h1></div>
+            <button class="pill-button compact js-search" type="button"><i data-lucide="search"></i> Search</button>
+          </div>
+          <div class="explore-grid">
+            <button class="explore-tile tall" type="button"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=800&q=80" alt="Pink glazed donuts" /></button>
+            <button class="explore-tile" type="button"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=800&q=80" alt="Layer cake with cream" /></button>
+            <button class="explore-tile" type="button"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=800&q=80" alt="Chocolate chip cookies" /></button>
+            <button class="explore-tile wide" type="button"><img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=1000&q=80" alt="Decorated celebration cake" /></button>
+            <button class="explore-tile" type="button"><img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=800&q=80" alt="Chocolate pastry" /></button>
+            <button class="explore-tile tall" type="button"><img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=800&q=80" alt="Cupcakes with colorful frosting" /></button>
+            <button class="explore-tile" type="button"><img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=800&q=80" alt="Fresh chocolate cookies" /></button>
+          </div>
+        </section>
+
+        <section class="view-panel" data-view-panel="reels" aria-labelledby="reels-title">
+          <div class="view-heading"><div><p class="eyebrow">Watch, bake, repeat</p><h1 id="reels-title">Bakes in motion</h1></div></div>
+          <div class="reel-stage">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1000&q=85" alt="A beautifully layered cake" />
+            <div class="reel-copy">
+              <span class="avatar avatar-jamie">J</span>
+              <div><strong>jamie.bakes</strong><p>The softest vanilla cake, one layer at a time.</p></div>
+            </div>
+            <div class="reel-actions">
+              <button type="button"><i data-lucide="heart"></i><span>2.4k</span></button>
+              <button type="button"><i data-lucide="message-circle"></i><span>183</span></button>
+              <button type="button"><i data-lucide="send"></i><span>Share</span></button>
+            </div>
+          </div>
+        </section>
+
+        <section class="view-panel" data-view-panel="messages" aria-labelledby="messages-title">
+          <div class="view-heading"><div><p class="eyebrow">Keep in touch</p><h1 id="messages-title">Messages</h1></div></div>
+          <div class="messages-card">
+            <div class="conversation-list">
+              <button class="conversation is-selected" type="button"><span class="avatar avatar-milo">M</span><span><strong>milo.makes</strong><small>That cookie recipe 👀</small></span><b>2</b></button>
+              <button class="conversation" type="button"><span class="avatar avatar-cocoa">C</span><span><strong>cocoa.club</strong><small>Sent you a post</small></span></button>
+              <button class="conversation" type="button"><span class="avatar avatar-flour">F</span><span><strong>flour.power</strong><small>Sunday?</small></span></button>
+            </div>
+            <div class="chat">
+              <header><span class="avatar avatar-milo">M</span><strong>milo.makes</strong><small>Active now</small></header>
+              <div class="chat-bubbles">
+                <p>Did you try the cinnamon shortcut?</p>
+                <p class="mine">Just pulled batch one out. It smells unreal.</p>
+                <p>Send photos immediately 📸</p>
+              </div>
+              <form class="chat-form"><input type="text" placeholder="Write a message…" /><button type="button"><i data-lucide="send"></i></button></form>
+            </div>
+          </div>
+        </section>
+
+        <section class="view-panel" data-view-panel="notifications" aria-labelledby="activity-title">
+          <div class="view-heading"><div><p class="eyebrow">You're popular</p><h1 id="activity-title">Warm activity</h1></div></div>
+          <div class="activity-list">
+            <p class="activity-label">Today</p>
+            <button type="button"><span class="avatar avatar-jamie">J</span><span><strong>jamie.bakes</strong> loved your cinnamon buns.<small>12 min</small></span><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=120&q=70" alt="" /></button>
+            <button type="button"><span class="avatar avatar-sugar">S</span><span><strong>sugar.rush</strong> started following you.<small>46 min</small></span><b class="follow-mini">Follow</b></button>
+            <button type="button"><span class="avatar avatar-cocoa">C</span><span><strong>cocoa.club</strong> replied: “Save me one!”<small>2 hr</small></span><img src="https://images.unsplash.com/photo-1606312619070-d48b4c652a52?auto=format&fit=crop&w=120&q=70" alt="" /></button>
+            <p class="activity-label">Earlier this week</p>
+            <button type="button"><span class="avatar avatar-dough">D</span><span><strong>daily.dough</strong> and 42 others liked your post.<small>Tuesday</small></span><img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=120&q=70" alt="" /></button>
+          </div>
+        </section>
+
+        <section class="view-panel" data-view-panel="profile" aria-labelledby="profile-title">
+          <div class="profile-header">
+            <div class="profile-avatar avatar-you">A<span class="online-dot"></span></div>
+            <div class="profile-meta">
+              <div><h1 id="profile-title">alexa.oven</h1><button class="primary-button small" type="button">Edit profile</button></div>
+              <ul><li><strong>128</strong> posts</li><li><strong>8.4k</strong> friends</li><li><strong>392</strong> following</li></ul>
+              <p><strong>Alexa Oven</strong><br />Weekend baker, weekday dreamer. Making small things feel special ✦</p>
+            </div>
+          </div>
+          <div class="profile-tabs"><button class="is-active" type="button"><i data-lucide="grid-3x3"></i> Posts</button><button type="button"><i data-lucide="bookmark"></i> Saved</button><button type="button"><i data-lucide="user-round"></i> Tagged</button></div>
+          <div class="profile-grid">
+            <button type="button"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=700&q=80" alt="Cookies on a baking sheet" /></button>
+            <button type="button"><img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?auto=format&fit=crop&w=700&q=80" alt="Cupcakes with frosting" /></button>
+            <button type="button"><img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=700&q=80" alt="Layer cake" /></button>
+            <button type="button"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=700&q=80" alt="Pink donuts" /></button>
+            <button type="button"><img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=700&q=80" alt="Chocolate cookies" /></button>
+            <button type="button"><img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=700&q=80" alt="Celebration cake" /></button>
+          </div>
+        </section>
+      </main>
+
+      <aside class="right-rail">
+        <div class="rail-profile">
+          <span class="avatar avatar-you">A</span>
+          <span><strong>alexa.oven</strong><small>Alexa Oven</small></span>
+          <button class="text-button" type="button">Switch</button>
+        </div>
+        <div class="rail-heading"><strong>Fresh faces</strong><button type="button">See all</button></div>
+        <div class="suggestions">
+          <div><span class="avatar avatar-jamie">J</span><span><strong>jamie.bakes</strong><small>Followed by flour.power</small></span><button class="follow-button" type="button">Follow</button></div>
+          <div><span class="avatar avatar-sugar">S</span><span><strong>sugar.rush</strong><small>Fresh to ginger</small></span><button class="follow-button" type="button">Follow</button></div>
+          <div><span class="avatar avatar-dough">D</span><span><strong>daily.dough</strong><small>Suggested for you</small></span><button class="follow-button" type="button">Follow</button></div>
+        </div>
+        <div class="rail-card">
+          <span>🍪</span>
+          <strong>Friday feeling?</strong>
+          <p>Share one tiny thing that made you smile this week.</p>
+          <button class="primary-button js-create" type="button">Share now</button>
+        </div>
+        <footer>Ginger is warm · Help · Privacy · Terms<br />© 2026 GINGER WEB</footer>
+      </aside>
+    </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <button class="is-active" type="button" data-view="home" aria-label="Home"><i data-lucide="house"></i></button>
+      <button type="button" data-view="explore" aria-label="Explore"><i data-lucide="compass"></i></button>
+      <button type="button" data-view="reels" aria-label="Bakes"><i data-lucide="clapperboard"></i></button>
+      <button type="button" data-view="messages" aria-label="Messages"><i data-lucide="message-circle"></i></button>
+      <button type="button" data-view="profile" aria-label="Profile"><span class="mini-avatar avatar-you">A</span></button>
     </nav>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <canvas id="orbit-canvas" aria-hidden="true"></canvas>
-        <div class="hero-kicker reveal">
-          <span>(001)</span>
-          <span>Digital playground / 2026</span>
-        </div>
-        <h1 id="hero-title" class="hero-title" aria-label="Beautiful chaos, engineered.">
-          <span class="title-line reveal">Beautiful</span>
-          <span class="title-line title-outline reveal">chaos,</span>
-          <span class="title-line reveal">engineered<span class="acid">.</span></span>
-        </h1>
-        <div class="hero-bottom">
-          <p class="hero-copy reveal">
-            We build unruly digital experiences for people who are bored of normal.
-            <span class="arrow">↘</span>
-          </p>
-          <a class="scroll-cue magnetic" href="#experiments" aria-label="Scroll to experiments">
-            <span>Scroll to enter</span>
-            <span class="scroll-ring">↓</span>
-          </a>
-        </div>
-        <div class="side-note" aria-hidden="true">Move your cursor / Click to detonate</div>
-      </section>
+    <div class="story-viewer" role="dialog" aria-modal="true" aria-label="Story viewer" hidden>
+      <button class="viewer-close icon-button" type="button" aria-label="Close story"><i data-lucide="x"></i></button>
+      <div class="story-progress"><span></span></div>
+      <header><span class="story-avatar avatar-milo">M</span><strong class="viewer-name">milo.makes</strong><small>now</small></header>
+      <img class="viewer-image" src="" alt="" />
+      <button class="viewer-prev" type="button" aria-label="Previous story"><i data-lucide="chevron-left"></i></button>
+      <button class="viewer-next" type="button" aria-label="Next story"><i data-lucide="chevron-right"></i></button>
+    </div>
 
-      <div class="ticker" aria-hidden="true">
-        <div class="ticker-track">
-          <span>Ideas with voltage</span><b>✳</b><span>Websites that misbehave</span><b>✳</b>
-          <span>Digital weirdos welcome</span><b>✳</b><span>Beautiful chaos</span><b>✳</b>
-          <span>Ideas with voltage</span><b>✳</b><span>Websites that misbehave</span><b>✳</b>
-          <span>Digital weirdos welcome</span><b>✳</b><span>Beautiful chaos</span><b>✳</b>
+    <div class="modal-backdrop create-modal" role="dialog" aria-modal="true" aria-labelledby="create-title" hidden>
+      <form class="modal-card create-card">
+        <header><button class="modal-close icon-button" type="button" aria-label="Close"><i data-lucide="x"></i></button><strong id="create-title">Share a warm moment</strong><button class="text-button publish-button" type="submit">Share</button></header>
+        <div class="upload-area">
+          <img class="upload-preview" alt="Upload preview" hidden />
+          <label>
+            <i data-lucide="image-plus"></i>
+            <strong>Drop something delicious here</strong>
+            <span>Choose a photo</span>
+            <input type="file" accept="image/*" />
+          </label>
         </div>
+        <textarea aria-label="Post caption" placeholder="Write a little something…" maxlength="220"></textarea>
+        <div class="create-options"><span>Add location</span><span>Tag friends</span></div>
+      </form>
+    </div>
+
+    <div class="modal-backdrop search-modal" role="dialog" aria-modal="true" aria-labelledby="search-title" hidden>
+      <div class="modal-card search-card">
+        <header><strong id="search-title">Find your next favorite</strong><button class="modal-close icon-button" type="button" aria-label="Close"><i data-lucide="x"></i></button></header>
+        <label class="search-input"><i data-lucide="search"></i><input type="search" placeholder="Search bakers, flavors, moments…" /></label>
+        <p class="eyebrow">Trending warm</p>
+        <div class="trending"><button type="button">#sundaybake</button><button type="button">#gingerbread</button><button type="button">#chocolatetalk</button><button type="button">#firstproof</button></div>
       </div>
+    </div>
 
-      <section class="experiments" id="experiments" aria-labelledby="experiments-title">
-        <div class="section-heading">
-          <p class="eyebrow"><span>01</span> / Selected experiments</p>
-          <h2 id="experiments-title">Made to make you <em>feel</em> something.</h2>
-        </div>
-
-        <div class="project-list">
-          <a class="project project-lime magnetic" href="#contact">
-            <span class="project-number">01</span>
-            <span class="project-title">Chrome Dreams</span>
-            <span class="project-type">Identity / WebGL / 2026</span>
-            <span class="project-arrow">↗</span>
-            <span class="project-art art-rings" aria-hidden="true">
-              <i></i><i></i><i></i><i></i>
-            </span>
-          </a>
-          <a class="project project-orange magnetic" href="#contact">
-            <span class="project-number">02</span>
-            <span class="project-title">After Dark</span>
-            <span class="project-type">Campaign / Motion / 2026</span>
-            <span class="project-arrow">↗</span>
-            <span class="project-art art-grid" aria-hidden="true"></span>
-          </a>
-          <a class="project project-purple magnetic" href="#contact">
-            <span class="project-number">03</span>
-            <span class="project-title">Human Error</span>
-            <span class="project-type">Experience / Sound / 2025</span>
-            <span class="project-arrow">↗</span>
-            <span class="project-art art-eye" aria-hidden="true">
-              <span></span>
-            </span>
-          </a>
-        </div>
-      </section>
-
-      <section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
-        <div class="manifesto-orb" aria-hidden="true"></div>
-        <div class="manifesto-inner">
-          <p class="eyebrow light"><span>02</span> / Our operating system</p>
-          <h2 id="manifesto-title">
-            No templates.<br />
-            No beige.<br />
-            <span>No boring.</span>
-          </h2>
-          <div class="manifesto-copy">
-            <p>
-              We are a tiny independent studio creating brands, sites, and interactive
-              worlds that refuse to whisper.
-            </p>
-            <p>
-              Strategy gives it teeth. Design gives it a face. Code makes it move.
-            </p>
-          </div>
-          <div class="manifesto-stamp" aria-hidden="true">
-            <span>KEEP</span>
-            <span>IT</span>
-            <span>WEIRD</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="playground" aria-labelledby="playground-title">
-        <div class="playground-copy">
-          <p class="eyebrow"><span>03</span> / Playground</p>
-          <h2 id="playground-title">Push the<br /><span>weird button.</span></h2>
-          <p>Tap the screen. Change the frequency. Make it yours.</p>
-        </div>
-        <button class="chaos-button magnetic" type="button" aria-label="Transform the page colors">
-          <span>MAKE</span>
-          <span>SOME</span>
-          <span>NOISE</span>
-          <b aria-hidden="true">✦</b>
-        </button>
-      </section>
-
-      <section class="contact" id="contact" aria-labelledby="contact-title">
-        <p class="eyebrow light"><span>04</span> / Open channel</p>
-        <p class="contact-kicker">Got a wild idea?</p>
-        <h2 id="contact-title">Let’s make it<br /><span>impossible</span> to ignore.</h2>
-        <a class="contact-link magnetic" href="mailto:hello@novavoid.studio">
-          hello@novavoid.studio <span>↗</span>
-        </a>
-      </section>
-    </main>
-
-    <footer>
-      <a class="brand" href="#top" aria-label="Back to top">NØVA/VOID</a>
-      <div>
-        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
-        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a>
-        <a href="https://www.are.na/" target="_blank" rel="noreferrer">Are.na ↗</a>
-      </div>
-      <p>© 2026 / Built with caffeine + curiosity</p>
-      <a class="back-top" href="#top">Back to top ↑</a>
-    </footer>
+    <div class="toast" role="status" aria-live="polite"></div>
   </body>
 </html>
