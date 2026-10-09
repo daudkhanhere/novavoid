@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NØVA/VOID is an experimental digital playground for loud ideas, strange interfaces, and beautiful chaos."
+    />
+    <meta name="theme-color" content="#0a0a0a" />
+    <meta property="og:title" content="NØVA/VOID — Beautiful chaos, engineered." />
+    <meta
+      property="og:description"
+      content="An experimental digital playground for loud ideas and strange interfaces."
+    />
+    <meta property="og:type" content="website" />
+    <title>NØVA/VOID — Beautiful chaos, engineered.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <div class="cursor" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand magnetic" href="#top" aria-label="NØVA/VOID home">
+        <span>NØVA</span><span>/</span><span>VOID</span>
+      </a>
+      <div class="status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Signal live</span>
+        <span class="status-time" aria-hidden="true">00:00:00</span>
+      </div>
+      <button class="menu-button magnetic" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="menu-label">Menu</span>
+        <span class="menu-icon" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </header>
+
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="#experiments" data-index="01">Experiments <span>↗</span></a>
+      <a href="#manifesto" data-index="02">Manifesto <span>↗</span></a>
+      <a href="#contact" data-index="03">Start something <span>↗</span></a>
+      <p>Independent digital studio<br />Somewhere on planet Earth</p>
+    </nav>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <canvas id="orbit-canvas" aria-hidden="true"></canvas>
+        <div class="hero-kicker reveal">
+          <span>(001)</span>
+          <span>Digital playground / 2026</span>
+        </div>
+        <h1 id="hero-title" class="hero-title" aria-label="Beautiful chaos, engineered.">
+          <span class="title-line reveal">Beautiful</span>
+          <span class="title-line title-outline reveal">chaos,</span>
+          <span class="title-line reveal">engineered<span class="acid">.</span></span>
+        </h1>
+        <div class="hero-bottom">
+          <p class="hero-copy reveal">
+            We build unruly digital experiences for people who are bored of normal.
+            <span class="arrow">↘</span>
+          </p>
+          <a class="scroll-cue magnetic" href="#experiments" aria-label="Scroll to experiments">
+            <span>Scroll to enter</span>
+            <span class="scroll-ring">↓</span>
+          </a>
+        </div>
+        <div class="side-note" aria-hidden="true">Move your cursor / Click to detonate</div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker-track">
+          <span>Ideas with voltage</span><b>✳</b><span>Websites that misbehave</span><b>✳</b>
+          <span>Digital weirdos welcome</span><b>✳</b><span>Beautiful chaos</span><b>✳</b>
+          <span>Ideas with voltage</span><b>✳</b><span>Websites that misbehave</span><b>✳</b>
+          <span>Digital weirdos welcome</span><b>✳</b><span>Beautiful chaos</span><b>✳</b>
+        </div>
+      </div>
+
+      <section class="experiments" id="experiments" aria-labelledby="experiments-title">
+        <div class="section-heading">
+          <p class="eyebrow"><span>01</span> / Selected experiments</p>
+          <h2 id="experiments-title">Made to make you <em>feel</em> something.</h2>
+        </div>
+
+        <div class="project-list">
+          <a class="project project-lime magnetic" href="#contact">
+            <span class="project-number">01</span>
+            <span class="project-title">Chrome Dreams</span>
+            <span class="project-type">Identity / WebGL / 2026</span>
+            <span class="project-arrow">↗</span>
+            <span class="project-art art-rings" aria-hidden="true">
+              <i></i><i></i><i></i><i></i>
+            </span>
+          </a>
+          <a class="project project-orange magnetic" href="#contact">
+            <span class="project-number">02</span>
+            <span class="project-title">After Dark</span>
+            <span class="project-type">Campaign / Motion / 2026</span>
+            <span class="project-arrow">↗</span>
+            <span class="project-art art-grid" aria-hidden="true"></span>
+          </a>
+          <a class="project project-purple magnetic" href="#contact">
+            <span class="project-number">03</span>
+            <span class="project-title">Human Error</span>
+            <span class="project-type">Experience / Sound / 2025</span>
+            <span class="project-arrow">↗</span>
+            <span class="project-art art-eye" aria-hidden="true">
+              <span></span>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <section class="manifesto" id="manifesto" aria-labelledby="manifesto-title">
+        <div class="manifesto-orb" aria-hidden="true"></div>
+        <div class="manifesto-inner">
+          <p class="eyebrow light"><span>02</span> / Our operating system</p>
+          <h2 id="manifesto-title">
+            No templates.<br />
+            No beige.<br />
+            <span>No boring.</span>
+          </h2>
+          <div class="manifesto-copy">
+            <p>
+              We are a tiny independent studio creating brands, sites, and interactive
+              worlds that refuse to whisper.
+            </p>
+            <p>
+              Strategy gives it teeth. Design gives it a face. Code makes it move.
+            </p>
+          </div>
+          <div class="manifesto-stamp" aria-hidden="true">
+            <span>KEEP</span>
+            <span>IT</span>
+            <span>WEIRD</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="playground" aria-labelledby="playground-title">
+        <div class="playground-copy">
+          <p class="eyebrow"><span>03</span> / Playground</p>
+          <h2 id="playground-title">Push the<br /><span>weird button.</span></h2>
+          <p>Tap the screen. Change the frequency. Make it yours.</p>
+        </div>
+        <button class="chaos-button magnetic" type="button" aria-label="Transform the page colors">
+          <span>MAKE</span>
+          <span>SOME</span>
+          <span>NOISE</span>
+          <b aria-hidden="true">✦</b>
+        </button>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <p class="eyebrow light"><span>04</span> / Open channel</p>
+        <p class="contact-kicker">Got a wild idea?</p>
+        <h2 id="contact-title">Let’s make it<br /><span>impossible</span> to ignore.</h2>
+        <a class="contact-link magnetic" href="mailto:hello@novavoid.studio">
+          hello@novavoid.studio <span>↗</span>
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <a class="brand" href="#top" aria-label="Back to top">NØVA/VOID</a>
+      <div>
+        <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a>
+        <a href="https://www.are.na/" target="_blank" rel="noreferrer">Are.na ↗</a>
+      </div>
+      <p>© 2026 / Built with caffeine + curiosity</p>
+      <a class="back-top" href="#top">Back to top ↑</a>
+    </footer>
+  </body>
+</html>
